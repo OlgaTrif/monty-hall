@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.src.Monty;
+
 /**
  * В качестве задачи предлагаю вам реализовать код для демонстрации парадокса Монти Холла
  * (Парадокс Монти Холла — Википедия ) и наглядно убедиться в верности парадокса
@@ -17,6 +19,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Monty mont = new Monty();
+        mont.start();
     }
 }
