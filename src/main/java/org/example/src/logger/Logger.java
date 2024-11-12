@@ -1,10 +1,9 @@
 package org.example.src.logger;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 
 public class Logger implements Repository<String> {
-    private static final String LOG_PATH = "src/history.txt";
+    private static final String LOG_PATH = "src/main/resources/files/history.txt";
 
     @Override
     public void save(String text){
@@ -13,22 +12,6 @@ public class Logger implements Repository<String> {
             writer.write("\n");
         } catch (Exception e){
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public String load(){
-        StringBuilder stringBuilder = new StringBuilder();
-        try (FileReader reader = new FileReader(LOG_PATH);){
-            int c;
-            while ((c = reader.read()) != -1){
-                stringBuilder.append((char) c);
-            }
-            stringBuilder.delete(stringBuilder.length()-1, stringBuilder.length());
-            return stringBuilder.toString();
-        } catch (Exception e){
-            e.printStackTrace();
-            return null;
         }
     }
 }
